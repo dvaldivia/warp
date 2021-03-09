@@ -44,7 +44,7 @@ var statCmd = cli.Command{
 	Usage:  "benchmark stat objects (get file info)",
 	Action: mainStat,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, statFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, statFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 

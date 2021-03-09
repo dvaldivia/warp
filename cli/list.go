@@ -43,7 +43,7 @@ var listCmd = cli.Command{
 	Usage:  "benchmark list objects",
 	Action: mainList,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, listFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, listFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 

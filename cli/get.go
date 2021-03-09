@@ -48,7 +48,7 @@ var getCmd = cli.Command{
 	Usage:  "benchmark get objects",
 	Action: mainGet,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, getFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, getFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 

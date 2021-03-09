@@ -48,7 +48,7 @@ var selectCmd = cli.Command{
 	Usage:  "benchmark select objects",
 	Action: mainSelect,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, selectFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, selectFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 

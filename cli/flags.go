@@ -209,3 +209,50 @@ var ioFlags = []cli.Flag{
 		Usage: "Specify custom storage class, for instance 'STANDARD' or 'REDUCED_REDUNDANCY'.",
 	},
 }
+
+// Flags to configure saving the results of the benchmark.
+var saveFlags = []cli.Flag{
+	cli.BoolFlag{
+		Name:  "save",
+		Usage: "Save the benchmark+profile data to an object storage location, by default the instance being benchmarked.",
+	},
+	cli.StringFlag{
+		Name:  "save.bucket",
+		Value: appName + "benchmark-results",
+		Usage: "Specify the bucket to save the benchmark results to",
+	},
+	cli.StringFlag{
+		Name:   "save.host",
+		Usage:  "save.host. Multiple hosts can be specified as a comma separated list.",
+		EnvVar: appNameUC + "_SAVE_HOST",
+		Value:  "127.0.0.1:9000",
+	},
+	cli.StringFlag{
+		Name:   "save.access-key",
+		Usage:  "Specify access key if saving to a different object storage host.",
+		EnvVar: appNameUC + "_SAVE_ACCESS_KEY",
+		Value:  "",
+	},
+	cli.StringFlag{
+		Name:   "save.secret-key",
+		Usage:  "Specify secret key if saving to a different object storage host.",
+		EnvVar: appNameUC + "_SAVE_SECRET_KEY",
+		Value:  "",
+	},
+	cli.BoolFlag{
+		Name:   "save.tls",
+		Usage:  "Use TLS (HTTPS) for transport if saving to a different object storage host.",
+		EnvVar: appNameUC + "_SAVE_TLS",
+	},
+	cli.StringFlag{
+		Name:   "save.region",
+		Usage:  "Specify a custom region if saving to a different object storage host.",
+		EnvVar: appNameUC + "_SAVE_REGION",
+	},
+	cli.StringFlag{
+		Name:   "save.signature",
+		Usage:  "Specify a signature method  if saving to a different object storage host. Available values are S3V2, S3V4",
+		Value:  "S3V4",
+		Hidden: true,
+	},
+}

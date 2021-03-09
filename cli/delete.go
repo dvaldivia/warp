@@ -48,7 +48,7 @@ var deleteCmd = cli.Command{
 	Usage:  "benchmark delete objects",
 	Action: mainDelete,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, deleteFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, deleteFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 

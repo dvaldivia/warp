@@ -67,7 +67,7 @@ var mixedCmd = cli.Command{
 	Usage:  "benchmark mixed objects",
 	Action: mainMixed,
 	Before: setGlobalsFromContext,
-	Flags:  combineFlags(globalFlags, ioFlags, mixedFlags, genFlags, benchFlags, analyzeFlags),
+	Flags:  combineFlags(globalFlags, ioFlags, mixedFlags, genFlags, benchFlags, analyzeFlags, saveFlags),
 	CustomHelpTemplate: `NAME:
   {{.HelpName}} - {{.Usage}}
 
